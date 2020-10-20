@@ -1,7 +1,7 @@
 package com.llh.cloudsimple.service.impl;
 
 import com.llh.cloudsimple.dao.PaymentDao;
-import com.llh.cloudsimple.entity.Payment;
+import com.llh.cloudsimple.model.Payment;
 import com.llh.cloudsimple.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,11 +22,12 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment createPayment(Payment payment) {
-        return paymentDao.save(payment);
+        paymentDao.save(payment);
+        return payment;
     }
 
     @Override
     public Optional<Payment> getById(Integer id) {
-        return paymentDao.findById(id);
+        return Optional.ofNullable(paymentDao.findById(id));
     }
 }

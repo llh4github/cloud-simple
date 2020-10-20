@@ -1,8 +1,11 @@
 package com.llh.cloudsimple.dao;
 
-import com.llh.cloudsimple.entity.Payment;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.llh.cloudsimple.model.Payment;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Optional;
+
 
 /**
  * PaymentDao
@@ -11,6 +14,10 @@ import org.springframework.stereotype.Repository;
  *
  * @author llh
  */
-@Repository
-public interface PaymentDao extends JpaRepository<Payment, Integer> {
+@Mapper
+public interface PaymentDao {
+
+    int save(Payment payment);
+
+    Payment findById(@Param("id") Integer id);
 }

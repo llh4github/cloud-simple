@@ -1,7 +1,7 @@
 package com.llh.cloudsimple.cotroller;
 
 import com.llh.cloudsimple.entity.JsonResult;
-import com.llh.cloudsimple.entity.Payment;
+import com.llh.cloudsimple.model.Payment;
 import com.llh.cloudsimple.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +22,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("add")
-    public JsonResult add(Payment payment) {
+    public JsonResult add(@RequestBody Payment payment) {
         Payment entity = paymentService.createPayment(payment);
         return JsonResult.ok(entity);
     }

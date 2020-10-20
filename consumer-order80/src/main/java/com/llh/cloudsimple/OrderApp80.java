@@ -1,21 +1,18 @@
 package com.llh.cloudsimple;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Payment8001
+ * OrderApp80
  * <p>
- * CreatedAt: 2020-10-18 20:05
+ * CreatedAt: 2020-10-19 21:54
  *
  * @author llh
  */
 @SpringBootApplication
-@MapperScan("com.llh.*.dao")
-public class Payment8001 {
-
+public class OrderApp80 {
     public static void main(String[] args) {
-        SpringApplication.run(Payment8001.class, args);
+        SpringApplication.run(OrderApp80.class, args);
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.llh.cloudsimple.dao.PaymentDao">
+    <resultMap id="BaseResultMap" type="com.llh.cloudsimple.model.Payment">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="seial_number" property="seialNumber" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="save" parameterType="com.llh.cloudsimple.model.Payment" useGeneratedKeys="true" keyProperty="id">
+            insert into payment(seial_number) values (#{seialNumber})
+    </insert>
+
+    <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select * from payment where id = #{id}
+    </select>
+
+
+</mapper>

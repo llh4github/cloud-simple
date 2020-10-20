@@ -1,6 +1,7 @@
 package com.llh.cloudsimple.service;
 
-import com.llh.cloudsimple.entity.Payment;
+
+import com.llh.cloudsimple.model.Payment;
 
 import java.util.Optional;
 

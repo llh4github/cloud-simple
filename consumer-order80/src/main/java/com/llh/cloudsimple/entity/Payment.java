@@ -3,8 +3,6 @@ package com.llh.cloudsimple.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
 /**
  * Payment
  * <p>
@@ -14,11 +12,9 @@ import javax.persistence.*;
  */
 @Data
 @NoArgsConstructor
-@Entity
 public class Payment {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     /**
      * 支付序列号。
