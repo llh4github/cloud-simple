@@ -12,6 +12,7 @@
         <module>consumer-order80</module>
         <module>project-commons</module>
         <module>eureka-server-7001</module>
+        <module>eureka-server-7002</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->

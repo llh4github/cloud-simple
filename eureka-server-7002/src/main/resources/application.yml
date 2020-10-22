@@ -1,11 +1,9 @@
 server:
-  port: 7001
+  port: 7002
 
 eureka:
   instance:
-    # 不修改系统 host 文件话也能运行，就看着容易晕
-    # 无法获取主机名则会显示 localhost
-    hostname: eureka7001 # eureka服务端实例名称
+    hostname: eureka7002 # eureka服务端实例名称
   client:
     # eureka服务端 不用再注册eureka服务里
     register-with-eureka: false
@@ -13,4 +11,4 @@ eureka:
     fetch-registry: false
     # 设置其他服务与eureka服务端沟通的地址
     service-url:
-      defaultZone: http://localhost:7002/eureka/
+      defaultZone: http://localhost:7001/eureka/
