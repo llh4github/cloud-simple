@@ -4,6 +4,7 @@ import com.llh.cloudsimple.entity.JsonResult;
 import com.llh.cloudsimple.model.Payment;
 import com.llh.cloudsimple.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -21,6 +22,9 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    @Value("${server.port}")
+    private String port;
+
     @PostMapping("add")
     public JsonResult add(@RequestBody Payment payment) {
         Payment entity = paymentService.createPayment(payment);
@@ -30,6 +34,6 @@ public class PaymentController {
     @GetMapping("{id}")
     public JsonResult getById(@PathVariable Integer id) {
         Optional<Payment> optional = paymentService.getById(id);
-        return JsonResult.ok(optional);
+        return JsonResult.ok(optional, port);
     }
 }

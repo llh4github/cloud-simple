@@ -23,6 +23,11 @@ public class JsonResult {
         return new JsonResult(200, "ok", data);
     }
 
+    public static JsonResult ok(Object data, String msg) {
+        return new JsonResult(200, msg, data);
+    }
+
+
     public static JsonResult ok() {
         return new JsonResult(200, "ok", null);
     }
