@@ -13,6 +13,8 @@
         <module>project-commons</module>
         <module>eureka-server-7001</module>
         <module>eureka-server-7002</module>
+        <module>consul-privider-payment8006</module>
+        <module>consul-consumer-order80</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
